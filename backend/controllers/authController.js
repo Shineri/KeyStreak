@@ -1,7 +1,7 @@
 import User from "../models/user.js";
-import { hashPassword } from "../utils/bcryptUtils.js";
+import { hashPassword,comparePassword } from "../utils/bcryptUtils.js";
 import { isValidEmail, isStrongPassword } from "../utils/validators.js";
-
+import  generateToken  from "../utils/generateToken.js";
 //signup controller
 export const signUp = async (req, res) => {
   const { username, email, password } = req.body;
@@ -65,5 +65,45 @@ export const signUp = async (req, res) => {
   } catch (err) {
     console.error(err.message);
     return res.status(500).json({ error: "Internal Server Error" });
+  }
+};
+
+/*========================================login controller====================================================*/
+
+export const login = async (req, res) => {
+  const { email, password } = req.body;
+  if (!email) {
+    return res.status(400).json({ message: "Please enter email" });
+  }
+  if (!password) {
+    return res.status(400).json({ message: "Please enter password" });
+  }
+
+  try {
+      // Find the user by email
+      const user = await User.findOne({ email :email});
+      if (!user) {
+        console.log("User not found")
+          return res.status(401).json({ message: "User not found. signUp first", });
+      }
+
+      // Check if password matches
+      const isMatch = comparePassword(password,user.password);
+      if (!isMatch) {
+          return res.status(401).json({ message: 'Invalid password' });
+      }
+
+      // Generate JWT
+      const token = generateToken(user);
+
+      // Respond with token
+      console.log("User :",user);
+      return res
+      .status(200)
+      .json({ token });
+
+  } catch (error) {
+      console.error("Login error:", error);
+      res.status(500).json({ message: 'Server error' });
   }
 };
