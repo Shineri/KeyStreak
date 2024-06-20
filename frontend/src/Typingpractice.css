@@ -1,0 +1,65 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f4eeee;
+  }
+  
+  .typing-box {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 50vh;
+  }
+  
+  .typing-box h2 {
+    font-size: 24px;
+    margin-bottom: 16px;
+    color:red;
+  }
+  
+  .typing-box p {
+    font-size: 18px;
+    margin-bottom: 16px;
+    color: #534141;
+  }
+  
+  .typing-box textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 16px;
+  }
+  
+  .typing-box .stats {
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+  
+  .typing-box .stats p {
+    margin: 4px 0;
+  }
+  
+  .typing-box button {
+    padding: 10px 20px;
+    background-color: #49b173;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .typing-box button:hover {
+    background-color: #1c9e6c;
+  }
+  
