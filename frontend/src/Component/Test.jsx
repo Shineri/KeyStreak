@@ -5,19 +5,15 @@ import React, { useState } from 'react';
 import './Test.css'; // Import your CSS file for TestForm styling
 
 const TestForm = () => {
-  const [camelCase, setCamelCase] = useState(false);
-  const [lowercase, setLowercase] = useState(false);
-  const [punctuation, setPunctuation] = useState(false);
-  const [alphanumeric, setAlphanumeric] = useState(false);
+  const [selectedOption, setSelectedOption] = useState('');
+  const [timeDuration, setTimeDuration] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle the form submission
     console.log({
-      camelCase,
-      lowercase,
-      punctuation,
-      alphanumeric,
+      selectedOption,
+      timeDuration,
     });
   };
 
@@ -27,40 +23,54 @@ const TestForm = () => {
         <h2>Test Options</h2>
         <label>
           <input
-            type="checkbox"
-            checked={camelCase}
-            onChange={() => setCamelCase(!camelCase)}
+            type="radio"
+            value="camelCase"
+            checked={selectedOption === 'camelCase'}
+            onChange={() => setSelectedOption('camelCase')}
           />
           Camel Case
         </label>
-        <p>            </p>
         <label>
           <input
-            type="checkbox"
-            checked={lowercase}
-            onChange={() => setLowercase(!lowercase)}
+            type="radio"
+            value="lowercase"
+            checked={selectedOption === 'lowercase'}
+            onChange={() => setSelectedOption('lowercase')}
           />
           Lowercase
         </label>
-        
         <label>
           <input
-            type="checkbox"
-            checked={punctuation}
-            onChange={() => setPunctuation(!punctuation)}
+            type="radio"
+            value="punctuation"
+            checked={selectedOption === 'punctuation'}
+            onChange={() => setSelectedOption('punctuation')}
           />
           Punctuation
         </label>
-        
         <label>
           <input
-            type="checkbox"
-            checked={alphanumeric}
-            onChange={() => setAlphanumeric(!alphanumeric)}
+            type="radio"
+            value="alphanumeric"
+            checked={selectedOption === 'alphanumeric'}
+            onChange={() => setSelectedOption('alphanumeric')}
           />
           Alphanumeric
         </label>
-      
+        <div className="time-duration">
+          <label htmlFor="timeDuration">Choose Time Duration:</label>
+          <select
+            id="timeDuration"
+            value={timeDuration}
+            onChange={(e) => setTimeDuration(e.target.value)}
+          >
+            <option value="">Select Duration</option>
+            <option value="5">5 minutes</option>
+            <option value="10">10 minutes</option>
+            <option value="15">15 minutes</option>
+            <option value="20">20 minutes</option>
+          </select>
+        </div>
         <button type="submit">Start Test</button>
       </form>
     </div>
@@ -68,4 +78,3 @@ const TestForm = () => {
 };
 
 export default TestForm;
-
