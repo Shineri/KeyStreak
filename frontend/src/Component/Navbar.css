@@ -1,0 +1,66 @@
+/* src/components/Navbar.css */
+/* Navbar.css */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 1rem 2rem;
+  color: #fff;
+}
+
+.navbar-logo img {
+  height: 70px;
+  width: auto;
+}
+
+.navbar-links {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar-links li {
+  margin: 0 1rem;
+  font-size: 2.25rem; /* Increase the font size */
+}
+
+.navbar-links li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar-links li a:hover {
+  text-decoration: underline;
+}
+
+.profile_dropdown {
+  position: relative;
+  cursor: pointer;
+}
+
+.dropdownmenu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #444;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 0.5rem;
+  z-index: 1;
+}
+
+.dropdownmenu li {
+  margin: 0.5rem 0;
+}
+
+.dropdownmenu li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.dropdownmenu li a:hover {
+  text-decoration: underline;
+}
