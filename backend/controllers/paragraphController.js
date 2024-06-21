@@ -1,21 +1,28 @@
 
-import generateParagraph from "../utils/generateParagraph.js";
+import {generatepredefinedParagraph,generateRandomParagraph} from "../utils/generateParagraph.js";
 
 /*==========================================getParagraph controller============================*/
 export const getParagraph = async (req,res) => {
-    const {type,duration} = req.query;
+  const { type, duration,source } = req.query;
+
 
     // Validate input
-  if (!type || !duration) {
-    return res.status(400).json({ message: "Type and duration are required." });
+  if (!type || !duration || !source) {
+    return res.status(400).json({ message: "All fields are required." });
   }
 
   // Parse duration to integer
   const parsedDuration = parseInt(duration, 10);
   try{
     // Generate paragraph
-    const paragraph = await generateParagraph(type,parsedDuration);
-
+    let paragraph;
+    if (source === "predefined") {
+      paragraph = await generatepredefinedParagraph(type, parsedDuration);
+    } else if (source === "random") {
+      paragraph = await generateRandomParagraph(type, parsedDuration);
+    } else {
+      return res.status(400).json({ message: "Invalid source. Must be 'predefined' or 'random'." });
+    }
     // Check if paragraph was generated successfully
     if(!paragraph){
         console.log("Sorry,not able to generate paragraph ");
