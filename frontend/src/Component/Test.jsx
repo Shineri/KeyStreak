@@ -1,20 +1,20 @@
-// src/components/TestForm.jsx
-// TestForm.jsx
-
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Test.css'; // Import your CSS file for TestForm styling
 
 const TestForm = () => {
   const [selectedOption, setSelectedOption] = useState('');
   const [timeDuration, setTimeDuration] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle the form submission
-    console.log({
-      selectedOption,
-      timeDuration,
-    });
+    // Start the test by setting startTest to true
+    if (selectedOption && timeDuration) {
+      navigate('/TestTakingPage');
+    } else {
+      alert("Please select both a test option and a time duration.");
+    }
   };
 
   return (
@@ -71,7 +71,9 @@ const TestForm = () => {
             <option value="20">20 minutes</option>
           </select>
         </div>
-        <button type="submit">Start Test</button>
+        <button type="button" onClick={handleSubmit}>
+          Start Test
+        </button>
       </form>
     </div>
   );

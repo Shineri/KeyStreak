@@ -36,3 +36,81 @@
     transform: rotate(360deg);
   }
 }
+
+
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+
+.test-taking-page {
+  max-width: 800px;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.test-taking-page h2 {
+  text-align: center;
+}
+
+.timer {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #4caf50; /* Default color for timer */
+}
+
+.timer.warning {
+  color: #e53935; /* Color when time is running out */
+}
+
+.test-running {
+  text-align: center;
+}
+
+.paragraph-box {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.answer-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.answer-form label {
+  margin-bottom: 10px;
+}
+
+.answer-form input[type='text'] {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.answer-form button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.answer-form button:hover {
+  background-color: #45a049;
+}

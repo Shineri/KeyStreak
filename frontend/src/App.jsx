@@ -8,6 +8,7 @@ import TestForm from './Component/Test';
 import Layout from './Layout';
 import Practice from './Practice';
 import Home from './Home';
+import TestTakingPage from './Component/TestTakingPage';
 
 function App() {
    const [home,sethome]= useState("signup")
@@ -19,6 +20,7 @@ function App() {
       <Route path = 'test/' element={<TestForm/>}/>
       <Route path = 'Signup/' element={<Signup/>}/>
       <Route path = 'Practice/' element={<Practice/>}/>
+      <Route path='TestTakingPage' element={<TestTakingPage/>}/>
       {/* <Route path='Login/'element={<Login sethome={sethome}/>}/> */}
       <Route path='Login/'element={<Login sethome={<Home/>}/>}/>
      </Route>
