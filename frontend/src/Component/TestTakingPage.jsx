@@ -73,11 +73,7 @@ const TestTakingPage = () => {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris felis nisi, interdum sed rutrum sed,
               placerat in magna. Nulla vel dapibus enim. Phasellus sollicitudin risus et quam auctor ultrices. Nunc
               condimentum velit sed arcu cursus, quis bibendum dolor fermentum. Vestibulum nec risus ac nunc semper
-              semper ac non justo. Nulla vestibulum lectus vitae quam pretium viverra. Aenean ac molestie libero, sed
-              elementum dui. Sed at mi magna. Morbi viverra justo non nisl tempus, sed egestas tellus tempor. Duis
-              elementum ipsum in ex laoreet feugiat. Sed volutpat ante vel nisl dignissim elementum. Fusce volutpat
-              orci sit amet fermentum varius. Ut tincidunt neque ac nisi volutpat, sed semper ante facilisis. Sed
-              fermentum, lorem nec vehicula tristique, libero est suscipit urna, in efficitur dui eros nec justo.
+              r dui eros nec justo.
               Proin ultricies id justo id blandit. Nam condimentum consectetur tristique.
             </p>
           </div>
