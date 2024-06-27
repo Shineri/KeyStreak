@@ -11,7 +11,7 @@
 }
 
 .navbar-logo img {
-  height: 70px;
+  height: 30px;
   width: auto;
 }
 
@@ -24,7 +24,7 @@
 
 .navbar-links li {
   margin: 0 1rem;
-  font-size: 2.25rem; /* Increase the font size */
+  font-size: 1.25rem; /* Increase the font size */
 }
 
 .navbar-links li a {
@@ -53,7 +53,7 @@
 }
 
 .dropdownmenu li {
-  margin: 0.5rem 0;
+  margin: 0.3rem 0;
 }
 
 .dropdownmenu li a {
