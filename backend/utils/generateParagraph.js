@@ -1,5 +1,5 @@
 // Example paragraphs for different types
-const paragraphs = {
+const predefinedparagraphs = {
   lowercase: [
     "this is a lowercase paragraph for typing practice.",
     "practicing typing improves speed and accuracy.",
@@ -43,8 +43,19 @@ const paragraphs = {
   ],
 };
 
-const generateParagraph = async (type, duration) => {
-  let paragraphType = paragraphs[type];
+// word lists for generation
+const wordLists = {
+  lowercase: ["this", "is", "a", "test", "paragraph", "for", "typing", "practice"],
+  camelcase: ["thisIs", "aTest", "paragraphFor", "typingPractice"],
+  alphanumeric: ["a1b2", "c3d4", "e5f6", "g7h8", "i9j0"],
+  punctuation: ["Hello,", "world!", "This", "is", "a", "test;", "for", "typing:", "practice..."]
+};
+
+
+
+
+export const generatepredefinedParagraph = async (type, duration) => {
+  let paragraphType = predefinedparagraphs[type];
   if (!paragraphType) {
     return "Invalid paragraph type.";
   }
@@ -62,4 +73,16 @@ const generateParagraph = async (type, duration) => {
   // Trim any trailing whitespace
   return selectedParagraph.trim();
 };
-export default generateParagraph;
+
+// Function to generate random paragraph
+export const generateRandomParagraph = async (type, duration) => {
+  let paragraph = "";
+  const words = wordLists[type];
+  let wordCount = Math.ceil((duration) * 200); // Estimate word count based on duration (200 WPM avg typing speed)
+  for (let i = 0; i < wordCount; i++) {
+      paragraph += words[Math.floor(Math.random() * words.length)] + " ";
+  }
+  return paragraph.trim();
+};
+
+//export default {generatepredefinedParagraph,generateRandomParagraph};
